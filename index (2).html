@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manelil Hardwares — Electrical, Plumbing &amp; Hardware, Chalakka</title>
+<meta name="description" content="Manelil Hardwares, Chalakka — electrical, plumbing and hardware supplies. In-store shopping, kerbside pickup and delivery. Rated 5.0 on Google.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root{
+  --blue-deep:#122A42;
+  --blue:#1E4569;
+  --blue-mid:#2A5A82;
+  --line:#8FD6F2;
+  --line-soft:rgba(143,214,242,0.35);
+  --paper:#F2F1EC;
+  --paper-line:rgba(18,42,66,0.12);
+  --ink:#152230;
+  --ink-muted:#5B6B78;
+  --signal:#FF6B35;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0; font-family:'Work Sans',sans-serif; color:var(--ink); background:var(--paper);}
+.mono{font-family:'JetBrains Mono',monospace;}
+h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif; font-weight:700; line-height:1.08; margin:0;}
+a{color:inherit;}
+.wrap{max-width:1100px; margin:0 auto; padding:0 26px;}
+
+/* grid backdrop for blueprint sections */
+.blueprint-bg{
+  background-color:var(--blue-deep);
+  background-image:
+    repeating-linear-gradient(0deg, var(--line-soft) 0 1px, transparent 1px 42px),
+    repeating-linear-gradient(90deg, var(--line-soft) 0 1px, transparent 1px 42px);
+  color:#EAF6FC;
+}
+
+/* header */
+.site-header{position:sticky; top:0; z-index:50; background:var(--blue-deep); border-bottom:1px solid rgba(143,214,242,0.25);}
+.site-header .wrap{display:flex; align-items:center; justify-content:space-between; padding:12px 26px;}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:#EAF6FC;}
+.brand img{width:38px; height:38px; display:block;}
+.brand-name{font-family:'Space Grotesk'; font-size:14.5px; letter-spacing:0.02em;}
+.brand-tag{display:block; font-family:'JetBrains Mono'; font-size:10px; color:var(--line); letter-spacing:0.05em; margin-top:1px;}
+nav{display:flex; align-items:center; gap:22px;}
+nav a.navlink{font-size:13.5px; font-weight:500; text-decoration:none; color:#C7DCE8;}
+nav a.navlink:hover{color:var(--line);}
+.btn-call{
+  font-family:'JetBrains Mono'; font-size:12.5px; text-decoration:none;
+  background:var(--signal); color:#12100D; padding:9px 15px; border-radius:3px; font-weight:500;
+}
+.btn-call:hover{background:#FF8657;}
+
+/* hero */
+.hero{padding:76px 0 60px; position:relative;}
+.hero-grid{display:grid; grid-template-columns:1.3fr 0.9fr; gap:40px; align-items:end;}
+.eyebrow{font-family:'JetBrains Mono'; font-size:12px; letter-spacing:0.12em; color:var(--line); text-transform:uppercase; display:block; margin-bottom:18px;}
+.hero h1{font-size:clamp(32px,5vw,54px); color:#EAF6FC;}
+.hero h1 .dim{color:var(--line);}
+.hero p.sub{font-size:16px; color:#C7DCE8; max-width:520px; margin-top:18px; line-height:1.6;}
+.cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:30px;}
+.btn-primary,.btn-ghost{
+  font-family:'JetBrains Mono'; font-size:13px; padding:12px 20px; border-radius:3px; text-decoration:none; display:inline-flex; gap:8px; align-items:center;
+}
+.btn-primary{background:var(--signal); color:#12100D; font-weight:500;}
+.btn-primary:hover{background:#FF8657;}
+.btn-ghost{border:1px solid var(--line-soft); color:#EAF6FC;}
+.btn-ghost:hover{border-color:var(--line);}
+
+/* title block, like a real drawing title block */
+.title-block{
+  background:rgba(18,42,66,0.85); border:1px solid var(--line-soft); border-radius:4px;
+  padding:0; overflow:hidden;
+}
+.tb-row{display:flex; justify-content:space-between; padding:10px 16px; border-bottom:1px solid var(--line-soft); font-family:'JetBrains Mono'; font-size:11.5px;}
+.tb-row:last-child{border-bottom:none;}
+.tb-row .k{color:var(--line); text-transform:uppercase; letter-spacing:0.05em;}
+.tb-row .v{color:#EAF6FC; text-align:right;}
+
+/* sections */
+.section{padding:68px 0;}
+.section-head{max-width:640px; margin-bottom:36px;}
+.section-head.center{margin-left:auto; margin-right:auto; text-align:center;}
+.section .eyebrow.dark{color:var(--blue-mid);}
+.section h2{font-size:clamp(24px,3.2vw,32px); color:var(--ink);}
+.section.blueprint-bg h2{color:#EAF6FC;}
+.section.blueprint-bg .eyebrow{color:var(--line);}
+
+/* services as drawing sheets */
+.sheets{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+.sheet{
+  background:#fff; border:1px solid var(--paper-line); border-radius:6px; overflow:hidden;
+}
+.sheet-head{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:10px 16px; background:var(--blue-deep); color:var(--line);
+  font-family:'JetBrains Mono'; font-size:11.5px; letter-spacing:0.04em;
+}
+.sheet-body{padding:22px 20px;}
+.sheet-body svg{width:40px; height:40px; margin-bottom:14px;}
+.sheet-body h3{font-size:18px; margin-bottom:8px;}
+.sheet-body p{font-size:14px; color:var(--ink-muted); line-height:1.55; margin:0;}
+.sheet-tags{margin-top:14px; font-family:'JetBrains Mono'; font-size:10.5px; color:var(--ink-muted);}
+
+/* stats strip */
+.stats-strip{display:flex; flex-wrap:wrap; gap:0; border:1px solid var(--paper-line); border-radius:6px; overflow:hidden; margin-top:40px;}
+.stat{flex:1; min-width:150px; padding:20px 22px; border-right:1px solid var(--paper-line); background:#fff;}
+.stat:last-child{border-right:none;}
+.stat .num{font-family:'Space Grotesk'; font-size:26px; color:var(--blue);}
+.stat .label{font-family:'JetBrains Mono'; font-size:11px; color:var(--ink-muted); text-transform:uppercase; letter-spacing:0.04em; margin-top:4px;}
+
+/* reviews as inspection notes */
+.reviews-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+.note{
+  background:#FFFDF6; border:1px solid var(--paper-line); border-radius:2px; padding:22px;
+  position:relative; box-shadow:0 6px 14px rgba(18,42,66,0.08);
+}
+.note::before{
+  content:""; position:absolute; top:-7px; left:20px; width:14px; height:14px; border-radius:50%;
+  background:var(--signal); box-shadow:0 2px 4px rgba(0,0,0,0.25);
+}
+.note .stars{color:var(--signal); font-size:13px; display:block; margin-bottom:10px;}
+.note p.quote{font-size:14.5px; line-height:1.6; margin:0 0 14px; color:var(--ink);}
+.note .who{font-family:'JetBrains Mono'; font-size:11.5px; color:var(--ink-muted);}
+.rating-banner{
+  display:flex; align-items:center; gap:20px; margin-bottom:34px; flex-wrap:wrap;
+}
+.rating-banner .num{font-family:'Space Grotesk'; font-size:44px; color:var(--line);}
+.rating-banner .stars-big{color:var(--signal); font-size:20px; letter-spacing:3px;}
+.rating-banner .meta{font-family:'JetBrains Mono'; font-size:12.5px; color:#C7DCE8;}
+.more-note{margin-top:24px; font-family:'JetBrains Mono'; font-size:12.5px; color:#C7DCE8;}
+.more-note a{color:var(--line); text-decoration:underline;}
+
+/* visit section */
+.visit-grid{display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:stretch;}
+.visit-card{border:1px solid var(--paper-line); border-radius:6px; background:#fff; overflow:hidden;}
+.map-frame{border:1px solid var(--paper-line); border-radius:6px; overflow:hidden; min-height:300px;}
+.map-frame iframe{width:100%; height:100%; min-height:300px; border:0; display:block;}
+
+/* footer, mini title block */
+footer{background:var(--blue-deep); color:#C7DCE8; padding:34px 0;}
+footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px; align-items:center; font-family:'JetBrains Mono'; font-size:12px;}
+footer a{color:var(--line); text-decoration:none;}
+
+@media (max-width:820px){
+  .hero-grid{grid-template-columns:1fr;}
+  .sheets, .reviews-grid{grid-template-columns:1fr;}
+  .stats-strip{flex-direction:column;}
+  .stat{border-right:none; border-bottom:1px solid var(--paper-line);}
+  .stat:last-child{border-bottom:none;}
+  .visit-grid{grid-template-columns:1fr;}
+  nav{gap:14px;}
+  nav a.navlink{display:none;}
+}
+@media (min-width:821px){
+  nav a.navlink{display:inline;}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#home">
+      <img src="logo.svg" alt="Manelil Hardwares logo">
+      <span>
+        <span class="brand-name">MANELIL HARDWARES</span>
+        <span class="brand-tag">CHALAKKA · KERALA</span>
+      </span>
+    </a>
+    <nav>
+      <a class="navlink" href="#services">Services</a>
+      <a class="navlink" href="#reviews">Reviews</a>
+      <a class="navlink" href="#visit">Visit</a>
+      <a class="btn-call" href="tel:+919847878121">CALL</a>
+    </nav>
+  </div>
+</header>
+
+<section id="home" class="hero blueprint-bg">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Electrical · Plumbing · Hardware — Chalakka</span>
+        <h1>Every job starts<br>with a plan.<br><span class="dim">Ours starts on this shelf.</span></h1>
+        <p class="sub">Manelil Hardwares stocks the wire, pipe, fittings and everyday hardware that turn Chalakka's job plans into finished work — in-store, kerbside, or delivered.</p>
+        <div class="cta-row">
+          <a class="btn-primary" href="tel:+919847878121">Call the shop →</a>
+          <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Manelil+Hardwares+Chalakka+Kerala" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+      <div class="title-block">
+        <div class="tb-row"><span class="k">Shop</span><span class="v">Manelil Hardwares</span></div>
+        <div class="tb-row"><span class="k">Location</span><span class="v">Chalakka, Kerala 683594</span></div>
+        <div class="tb-row"><span class="k">Status</span><span class="v">Closed · Opens 7:30 AM Mon</span></div>
+        <div class="tb-row"><span class="k">Rating</span><span class="v">5.0 / 5 — 5 reviews</span></div>
+        <div class="tb-row"><span class="k">Phone</span><span class="v">+91 98478 78121</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow dark mono">Shop drawing — sheets 1–3</span>
+      <h2>Three counters, one visit</h2>
+    </div>
+    <div class="sheets">
+
+      <div class="sheet">
+        <div class="sheet-head"><span>SHEET E-1</span><span>ELECTRICAL</span></div>
+        <div class="sheet-body">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 12h4l2-5 4 10 2-5h4" stroke="#1E4569" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>Electrical</h3>
+          <p>Switches, MCBs, wiring, holders and conduit for a rewire or a quick repair.</p>
+          <div class="sheet-tags">WIRE · SWITCH · MCB · CONDUIT</div>
+        </div>
+      </div>
+
+      <div class="sheet">
+        <div class="sheet-head"><span>SHEET P-1</span><span>PLUMBING</span></div>
+        <div class="sheet-body">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6h6v5a4 4 0 0 0 4 4h2M4 6V3M10 6V3M16 15v6M13 15h6" stroke="#1E4569" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>Plumbing</h3>
+          <p>PVC and CPVC pipe, taps, stopcocks, tanks and couplers for jobs big and small.</p>
+          <div class="sheet-tags">PIPE · TAP · STOPCOCK · TANK</div>
+        </div>
+      </div>
+
+      <div class="sheet">
+        <div class="sheet-head"><span>SHEET H-1</span><span>HARDWARE</span></div>
+        <div class="sheet-body">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2-2 2.5-2.5Z" stroke="#1E4569" stroke-width="1.6" stroke-linejoin="round"/>
+          </svg>
+          <h3>General Hardware</h3>
+          <p>Tools, fasteners, paint and the everyday parts every home and site needs on hand.</p>
+          <div class="sheet-tags">TOOLS · FASTENERS · PAINT</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="stats-strip">
+      <div class="stat"><div class="num">5.0★</div><div class="label">Google rating</div></div>
+      <div class="stat"><div class="num">3</div><div class="label">Ways to shop</div></div>
+      <div class="stat"><div class="num">7:30 AM</div><div class="label">Opening time</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="section blueprint-bg">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow mono">Customer inspection reports</span>
+      <h2>Rated 5.0 on Google</h2>
+    </div>
+    <div class="rating-banner">
+      <span class="num">5.0</span>
+      <div>
+        <span class="stars-big">★★★★★</span><br>
+        <span class="meta">5 reviews on Google</span>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="note">
+        <span class="stars">★★★★★</span>
+        <p class="quote">Excellent service and a wide range of quality products at competitive prices. Staff are knowledgeable, friendly and always ready to help.</p>
+        <span class="who">Fahmi ubaise · 6 reviews</span>
+      </div>
+      <div class="note">
+        <span class="stars">★★★★★</span>
+        <p class="quote">A reliable spot for quality hardware and great customer service.</p>
+        <span class="who">Aliya Mumthas · 3 reviews</span>
+      </div>
+      <div class="note">
+        <span class="stars">★★★★★</span>
+        <p class="quote">Left a 5-star rating on Google.</p>
+        <span class="who">Kunjumon Shamsudeen · 1 review</span>
+      </div>
+    </div>
+
+    <p class="more-note">2 more reviews are visible on the Google Business Profile — <a href="https://www.google.com/maps/search/?api=1&query=Manelil+Hardwares+Chalakka+Kerala" target="_blank" rel="noopener">see all &amp; write your own →</a></p>
+  </div>
+</section>
+
+<section id="visit" class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow dark mono">Site plan</span>
+      <h2>Plan your visit</h2>
+    </div>
+    <div class="visit-grid">
+      <div class="visit-card">
+        <div class="tb-row" style="border-bottom:1px solid var(--paper-line); color:var(--ink);"><span class="k mono" style="color:var(--blue-mid);">Address</span><span class="v mono" style="color:var(--ink);">Juma Masjid, Near, Chalakka, Kerala 683594</span></div>
+        <div class="tb-row" style="border-bottom:1px solid var(--paper-line); color:var(--ink);"><span class="k mono" style="color:var(--blue-mid);">Phone</span><span class="v mono" style="color:var(--ink);">+91 98478 78121</span></div>
+        <div class="tb-row" style="border-bottom:1px solid var(--paper-line); color:var(--ink);"><span class="k mono" style="color:var(--blue-mid);">Hours</span><span class="v mono" style="color:var(--ink);">Closed now · Opens 7:30 AM Mon</span></div>
+        <div class="tb-row" style="color:var(--ink);"><span class="k mono" style="color:var(--blue-mid);">Options</span><span class="v mono" style="color:var(--ink);">In-store · Kerbside · Delivery</span></div>
+        <div style="padding:18px 16px;">
+          <div class="cta-row" style="margin-top:0;">
+            <a class="btn-primary" href="tel:+919847878121">Call now</a>
+            <a class="btn-ghost" style="border-color:var(--paper-line); color:var(--ink);" href="https://www.google.com/maps/search/?api=1&query=Manelil+Hardwares+Chalakka+Kerala" target="_blank" rel="noopener">Directions</a>
+          </div>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=Manelil+Hardwares+Chalakka+Kerala&output=embed" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>MANELIL HARDWARES — SHEET FTR-1 — CHALAKKA, KERALA</span>
+    <span>© 2026 · <a href="tel:+919847878121">+91 98478 78121</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
